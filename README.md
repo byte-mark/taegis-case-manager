@@ -1,44 +1,49 @@
+
 # Taegis Case Manager (v1.0.1)
 
-A production-ready, single-file Tkinter application for managing Taegis Investigations (V2). 
+A production-ready, single-file Python/Tkinter application for managing Taegis Investigations (V2). 
+This tool allows for the status of multiple cases to updated at once with the option to add a comment upon update.
+
 Supports pagination, reliable multi-select with checkboxes, status updates using enum values, 
-and posting investigation comments using an explicit tenant mutation. 
-Version *1.0.1* is displayed in the application title, Help dialog, footer, and end-of-file marker.
+and posting case comments.
+
+![Taegis Case Manager Screenshot](https://github.com/byte-mark/taegis-case-manager/blob/main/assets/taegis_case_manager_image_v1_0_1.png?raw=true)
+
 
 ---
 
-# â Ruick Start
+# Quick Start
 
 1. **Install Python 3.9+**
 2. Ensure these environment variables are set:  
-  - CLIENT_ID
-  - CLIENT_SECRET
-  - BASE_ULL\ *optionalâ region picker can set this in-app)*  
+- `CLIENT_ID`
+- `CLIENT_SECRET`
+- `BASE_URL` (select from region picker)
 3. Install dependencies:
   pip install -r requirements.txt
 4. Run the app:
   python src/taegis_case_manager.py
-5. Select cases â choose a status â½ optionally add a comment â click Apply.
+5. Select cases and choose a status
+  optionally add a comment
+  click Apply.
 6. Check taegis_case_manager.log for any GraphQL details or errors.
 
 ---
 
-# â Features
+# Features
 
-- Investigation listing (V2) with pagination
+- Investigation listing with pagination
 - Per-row checkboxes with reliable selection tracking
 - Select All / Clear All toolbar actions
-- Status update via updateInvestigationV2
 - Optional comment posting using createInvestigationComment
-- Label-to-enum mapping (Open, ⚠️, 🚨, ❗❗ FO safe fallback)
+- Quick multi-field filtering of results
 - Compact Tkinter UI
 - Scrollable error details dialog + logging
 - Region picker (Charlie, Delta, Foxtrot, Echo)
-- Versioning throughout the UI
 
 ---
 
-# â Requirements
+# Requirements
 
 Python 3.9+
 
@@ -48,7 +53,7 @@ taegis_sdk_python
 Environment Variables:
 CLIENT_ID
 CLIENT_SECRET
-BASE_URL (optional)
+BASE_URL (Select from list)
 
 OS:
 Windows / macOS / Linux  
@@ -56,66 +61,28 @@ Tkinter included except some Linux distros (install python-tk)
 
 ---
 
-# â¡ Environment Setup
+# Environment Setup
 
-Install Python 3.9+
+Install Python 3.9+ (available on the Microsoft App Store for Windows user)
+
+Via CLI: (Windows/Linux/Mac)
 
 Verify Python/pip:
 python --version
 pip --version
 
-(Optional) create working directory:
-mkdir taegis-case-manager
-cd taegis-case-manager
-
-(Optional) virtual environment:
-python -m venv venv
-activate using OS-appropriate script
-
-Install dependencies:
-pip install -r requirements.txt
-
-Set environment variables:
-Windows (PowerShell):
-setx CLIENT_ID "your-client-id"
-setx CLIENT_SECRET "your-client-secret"
-setx BASE_URL "https://api.taegis.<region-domain>"
-
-macOS/Linux:
-export CLIENT_ID="your-client-id"
-export CLIENT_SECRET="your-client-secret"
-export BASE_URL="https://api.taegis.<region-domain>"
-
----
-
-# â¥ Installing Dependencies with pip
-
-pip --version  
-pip install -r requirements.txt  
-pip show taegis_sdk_python
-
----
-
-# â¯ Python Installation on Windows
-
-Download: https://www.python.org/downloads/windows/
-
-Check boxes:
-- Add Python to PATH  
-- Install Now
-
-Verify installation:
-python --version
-pip --version
-
 Install dependencies:
 pip install -r requirements.txt
 
 ---
 
-# ✓ Usage
+# Usage
 
 python src/taegis_case_manager.py
+
+Provide your API Client ID and Client Secret found in Taegis under "Tenant Settings" > Manage API Credentials
+
+Note: The "API Credential Name" you choose will be the "user" that will show in comment updates.
 
 Workflow:
 1. Load investigations
@@ -127,7 +94,7 @@ Workflow:
 
 ---
 
-# � Project Structure
+# Project Structure
 
 taegis-case-manager/
   src/
@@ -141,7 +108,7 @@ taegis-case-manager/
 
 ---
 
-# ï¼¡ Logging
+# Logging
 
 Logs written to:
 taegis_case_manager.log
@@ -154,7 +121,7 @@ Includes:
 
 ---
 
-# â Versioning & Releases
+# Versioning & Releases
 
 Semantic versioning  
 Current: 1.0.1
@@ -171,7 +138,7 @@ https://github.com/byte-mark/taegis-case-manager/releases
 
 ---
 
-# ✓ Troubleshooting
+# Troubleshooting
 
 Authentication fails:  
 - Check CLIENT_ID / CLIENT_SECRET  
@@ -187,7 +154,7 @@ sudo apt install python-tk
 
 ---
 
-# ⚖ License
+# License
 
 Licensed under MIT License  
 See LICENSE.
