@@ -83,6 +83,7 @@ python src/taegis_case_manager.py
 Provide your API Client ID and Client Secret found in Taegis under "Tenant Settings" > Manage API Credentials
 
 Note: The "API Credential Name" you choose will be the "user" that will show in comment updates.
+The API Credentials must be added with an Taegis Admin account. API credentials with an analyst role provides insufficient permissions.
 
 Workflow:
 1. Load investigations
